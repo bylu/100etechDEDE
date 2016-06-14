@@ -1,0 +1,4 @@
+INSERT INTO `dede_flink` VALUES('10','1','http://www.789game.com','游戏中心','','','','1437728857','1','2');
+INSERT INTO `dede_flink` VALUES('12','1','http://shuihu.789game.com','街机水浒传','','','','1437728907','1','2');
+INSERT INTO `dede_flink` VALUES('11','1','http://buyu.789game.com','街机千炮捕鱼','','','','1437728885','1','2');
+INSERT INTO `dede_flink` VALUES('13','1','http://www.789game.com/qipai','游戏大厅','','','','1437728934','1','2');

@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!--设置宽度为设备的宽度，默认不缩放，不允许用户缩放（即禁止缩放），在网页加载时隐藏地址栏与导航栏（ios7.1新增）-->
+    <meta content="True" name="HandheldFriendly" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!--是否启动webapp功能，会删除默认的苹果工具栏和菜单栏-->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!--当启动webapp功能时，显示手机信号、时间、电池的顶部导航栏的颜色。默认值为default（白色），可以定为black（黑色）和black-translucent（灰色半透明）-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!--忽略页面中的电话号码数字和邮件链接-->
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit">
+    <!-- 避免IE使用兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <!-- 微软的老式浏览器 -->
+    <meta name="MobileOptimized" content="320">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <title>炮炮捕鱼-千炮版-联网对战 ios 安卓高速下载</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="layout">
+		<div class="head">
+			<div class="text" >
+				<p id="thiscss">fdsfdsf</p>
+			</div>
+			<div class="btn">
+				<img src="images/btn-xz.png" id="downKeyRegional" alt="街机金蟾捕鱼下载"/>
+			</div>
+			<div style="clear:both"></div>
+		</div>
+		<div class="video">
+            <img src="images/buyu_04.png">
+			<video  controls preload="none" poster="images/mv.jpg" >
+				<source src="images/mv.mp4" type='video/mp4' />
+			</video>
+		</div>
+		<div class="content">
+			<a id="picLink2"  href=""><img class="appDown" src="images/content2.gif" ></a>
+			<a id="picLink3"  href=""><img class="appDown" src="images/content3.gif" ></a>
+		</div>
+	</div>
+
+	<div id="ftmobile">
+		<div id="bottomFix" class="mod-bottom">
+			<div class="m-wrap">
+				<img class="game-ico" alt="" src="images/icon175.png">
+				<div class="content">
+					<p class="game-title">水浒传</p><p class="game-sep-info">游戏简介：国内首款完美移植《百易水浒传》极致体验,狂热!火爆!亿万奖励等你来拿!</p>
+				</div>
+				<span class="ftmobile-close" id="ftmobile-close" onclick="document.getElementById('ftmobile').style.display ='none';"></span>
+			</div>
+			<a href="javascript:void(0);"  id="btnLink1" class="appDown mobile_btn aside-wrap">点击下载</a>
+		</div>
+	</div>
+	<div class="wenxinidealog wenxinidealogios"><img src="images/wenxinidealog.png" id="weixinclose" /></div>
+	<div class="wenxinidealog wenxinidealoganzhuo"><img src="images/anzhuos.png" id="weixinclosean" /></div>
+	<!--苹果手机不是在浏览器里面打开的-->
+	<div style="width:100%;height:100%;position:absolute;z-index:5;background-color:rgba(0,0,0,0.8);display:none;top:0;" id="appleqqdia"><img src="images/appleqq.png" id="closethis" /></div>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+	//初始化是调用
+    $(document).ready(function(){
+        updateLineHeightByParam();
+		$("#weixinclose").click(function(){
+			$(".wenxinidealogios").css("display","none");
+		});
+		$("#weixinclosean").click(function(){
+			$(".wenxinidealoganzhuo").css("display","none");
+		});
+		$("#closethis").click(function(){
+			$("#appleqqdia").css("display","none");
+		});
+    });
+
+	//调整宽度是调用
+    window.onresize=function(){
+        updateLineHeightByParam();
+    }
+//function:根据宽度大小来更改背景图片
+    function updateLineHeightByParam(){
+        var width=document.body.clientWidth;
+        var scale=width%50;
+        if(scale==0){
+            scale=width/50*0.34;
+        }else{
+            if(scale>=50){
+              scale=width/50*0.37;
+            }else{
+               scale=width/50*0.25; 
+            }
+        }
+        $("#thiscss").css("font-size",scale/2+"em");   
+    }
+	
+	//判断是否是微信扫描
+    var ua = navigator.userAgent.toLowerCase();
+    if (ua.match(/MicroMessenger/i) == "micromessenger") {
+        $("#downKeyRegional").bind('click', function(){
+			if (checkIsApple()) {
+				 $(".wenxinidealogios").css("display","block");  
+			}else{
+				$(".wenxinidealoganzhuo").css("display","block"); 
+			}
+        }); 
+		 $("#btnLink1").bind('click', function(){
+			if (checkIsApple()) {
+				 $(".wenxinidealogios").css("display","block");  
+			}else{
+				$(".wenxinidealoganzhuo").css("display","block"); 
+			}
+        }); 
+		
+    }else if(ua.indexOf('iphone') > -1 && ua.indexOf("qq") >-1 ){
+		$("#downKeyRegional").bind('click', function(){
+			$("#appleqqdia").css("display","block");
+		 });
+		 $("#btnLink1").bind('click', function(){
+			$("#appleqqdia").css("display","block");
+		 });
+	}else{
+        $("#downKeyRegional").bind('click', function(){
+           if (checkIsApple()) {
+                window.location.href = "https://itunes.apple.com/cn/app/id1013277346?mt=8";
+            }else{
+                window.location.href = "http://download.6513.com/phoneGame/108450BY.apk";
+            }          
+        });   
+		$("#btnLink1").bind('click', function(){
+		   if (checkIsApple()) {
+				window.location.href = "https://itunes.apple.com/us/app/bai-yi-shui-hu-chuan-jie-ji/id993585766?l=zh&ls=1&mt=8";
+			}else{
+				window.location.href = "http://download.6513.com/phoneshz/SHZ_NFX.apk";
+			}          
+		});  		
+    }
+    
+  //判断是否是苹果设备
+    function checkIsApple(){
+         var u = navigator.userAgent, app = navigator.appVersion;
+         var ios=!!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+         var iPad=u.indexOf('iPad') > -1;
+         var iPhone=u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1;
+         if(ios || iPad || iPhone){
+            return true;
+         }else{
+            return false;
+         }
+    }
+</script>
+</body>
+</html>
+
+

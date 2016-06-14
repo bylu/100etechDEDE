@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+<meta name="description" content="{dede:global.cfg_description/}" />
+{dede:include filename="head.htm"/}
+<script>$('#0').addClass('current');</script>
+<section id="banner">
+	<div class="bd">
+		<ul>
+			<li style="background-image: url({dede:global.cfg_templets_skin/}/images/banner-4.jpg);"></li>
+			<li  class="darkcolor" style="background-image: url({dede:global.cfg_templets_skin/}/images/banner-5.jpg);"></li>
+		</ul>
+	</div>
+	<div class="hd">
+		<ul></ul>
+	</div>
+</section>
+<section id="indexmain">
+	<article id="indexpro" class="area indexpro">
+		<div class="bd">
+			<ul>
+				{dede:arclist typeid='1'  titlelen='50' row='5'  orderby='click'}
+				<li>
+					<a href='[field:arcurl/]' title='[field:title /]'>
+						<img src='[field:litpic/]' height="130" width="218" alt="">
+						<h5>[field:title/]</h5>
+						<p>
+							<span>[field:shorttitle/]</span>
+						</p>
+					</a>
+				</li>
+				{/dede:arclist}
+			</ul>
+		</div>
+		<div class="hd">
+			<ul>
+				
+			</ul>
+		</div>
+	</article>
+	<section class="area maincon">
+		<section class="indexnews">
+			<div class="mtitle">
+				<h2>百易新闻</h2>
+				<span class="more">
+					<a href="baiyixinwen">
+						MORE <sup>+</sup>
+					</a>
+				</span>
+			</div>
+			<article class="indexnewscon">
+				<ul class="newslist">
+                {dede:arclist orderby='pubdate' titlelen='30' typeid='2'  row='3'}
+					<li>
+						<span class="time">[field:pubdate function='strftime("%m-%d",@me)'/]</span>
+						<a href="[field:arcurl/]">[field:title/]</a>
+					</li>
+                  {/dede:arclist}
+				</ul>
+			</article>
+		</section>
+
+		<!--特别招聘-->
+		<section class="indexrecruitment  indexrecruitment2">
+			<div class="mtitle">
+				<h2>百易招聘</h2>
+				<span class="more">
+					<a href="/jiaruwomen">
+						MORE
+						<sup>+</sup>
+					</a>
+				</span>
+			</div>
+			<article class="recruit">
+				<h3>目前紧急招聘岗位：</h3>
+				<a href="/jiaruwomen">
+					<ul class="recruitlist">
+                    	 {dede:arclist orderby='hot' titlelen='30' typeid='6,7,8,9'  row='4'}
+						<li><a href="[field:arcurl/]">[field:title/]</a></li>
+                        {/dede:arclist}
+					</ul>
+				</a>
+			</article>
+		</section>
+	</section>
+</section>
+
+<script type="text/javascript">
+$("#banner").slide({titCell:".hd ul",mainCell:".bd ul",autoPlay:true,autoPage:true,delayTime:1200,interTime:3000,trigger:"click"});
+$("#indexpro").slide({titCell:".hd ul",mainCell:".bd ul",effect:"leftLoop",autoPlay:true,autoPage:true,vis:4,scroll:2,trigger:"click",interTime:3000});
+
+</script>
+{dede:include filename="foot.htm"/}
+</body>
+</html>

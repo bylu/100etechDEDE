@@ -1,0 +1,1 @@
+<li>[[field:typelink/]][field:textlink/]</li>

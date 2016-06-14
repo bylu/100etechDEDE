@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1,user-scalable=0" />
+    <title></title>
+    <style type="text/css">
+	*{margin:0;padding:0;font-size:1em;font-family:"微软雅黑"}html,body{width:100%;height:100%;}body{ background-color:#b8e6ff;}textarea{width:98%;height:125px;padding:5px 0px;margin:0px auto;resize:none;border-radius:5px;border:2px solid #5995c4}textarea::-webkit-input-placeholder{color:#90aace;line-height:25px;padding:2px}img{width:auto}.divCenter{width:90%;height:95%;margin:0 auto;position:relative}.marTop2{margin-top:2%;} .marTop1{margin-top:1%;}
+    </style>
+</head>
+<body>
+    <div class="divCenter" id="mainShow" style="margin-bottom:10px;padding-bottom:4px;">
+        <textarea class="marTop1" id="say_msg"  style="height:125px;" placeholder="&nbsp;&nbsp;&nbsp;欢迎您在这里向我们倾诉(50字以内)您对我们的产品和服务的任何牢骚,点子,甚至是情绪,感谢您对我们的支持！"></textarea>
+         <span style="width:100%;float:left;position:relative;text-align:right;font-size:1.2em;color:#004499;">（还可输入<label class="word" style="color:red;padding:0% 1%;">50</label>字）</span>
+
+       
+    </div>
+</body>
+<script src="http://lib.sinaapp.com/js/jquery/1.10.2/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+
+	/*输入的*/
+	$(function(){
+        var wordCount = $("#mainShow"),
+            textArea = wordCount.find("textarea"),
+            word = wordCount.find(".word");
+        //调用
+        statInputNum(textArea,word);
+    });
+/**
+    function statInputNum(textArea,numItem) {
+        var max = numItem.text(),
+            curLength;
+        textArea[0].setAttribute("maxlength", max);
+        curLength = textArea.val().length;
+        numItem.text(max - curLength);
+        textArea.on('input propertychange', function () {
+            numItem.text(max - $(this).val().length);
+        });
+
+    }*/
+	 function statInputNum(textArea,numItem) {
+        var max = numItem.text(), curLength;
+        textArea[0].setAttribute("maxlength", max); 
+        curLength = textArea.val().length;
+        numItem.text(max - curLength);
+        textArea.on('input propertychange', function () {        
+			if(max - $(this).val().length<0){		
+			 numItem.text(0);
+			 }else{
+		      numItem.text(max - $(this).val().length);
+		     }		 
+        });
+    }
+
+	
+	
+	
+</script>
+</html>

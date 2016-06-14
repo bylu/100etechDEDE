@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+{dede:include filename="head.htm"/}
+<title>{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:global.cfg_keywords/}" >
+<meta name="description" content="{dede:global.cfg_description/}" >
+<style type="text/css">
+.bgtips{width:100%;height:157px;position:fixed;right:2%;top:2%;z-index:99999;}
+.bgtips .bg_4_tip{width:60%;position:absolute;right:2%;z-index:10000000}
+</style>
+</head>
+<body>
+<div id="wrap">
+<img src="{dede:global.cfg_templets_skin/}/mimages/bg.png" style="position:absolute;width:100%;height:100%;z-index:-1;" />
+	<header class="topindex">
+        <a>
+            <img src="{dede:global.cfg_templets_skin/}/mimages/dabg.png" alt="" class="pic">
+        </a>
+		<div class="nav">
+            <span class="logo">
+                <img src="{dede:global.cfg_templets_skin/}/mimages/logo.png" alt="">
+			</span>
+        </div>
+	</header>
+	<ul class="tit">
+		<li class="ico_green">
+            <a href="javascript:void(0);">
+                <img src="{dede:global.cfg_templets_skin/}/mimages/lv.png" alt="" id="userdownload">
+            </a>
+        </li>
+		<li class="ico_red">
+            <a href="">
+                <img src="{dede:global.cfg_templets_skin/}/mimages/huang.png" alt="">
+            </a>
+        </li>
+	</ul>
+	<div class="title">
+		<img src="{dede:global.cfg_templets_skin/}/mimages/1.png" alt="">
+    </div>
+	<div class="contentlist">
+		<div class="conlists">
+			<ul class="listnews">
+				{dede:arclist row="4" titlelen="18" infolen="100" orderby="pubdate"}
+				<li>
+					<a href="[field:typeurl/]" title="[field:title /]">
+						<label>[攻略]</label>[field:title /]
+					</a>
+				</li>
+				{/dede:arclist}
+			</ul>
+		</div>
+		<div class="rightpic">
+			<div class="showleftpic"><img src="{dede:global.cfg_templets_skin/}/mimages/2weima.png" /></div>
+			<div class="showrightpic"><img src="{dede:global.cfg_templets_skin/}/mimages/linchong.png" /></div>
+		</div>
+	</div>
+
+	<div class="title2"><strong><img src="{dede:global.cfg_templets_skin/}/mimages/2.png" alt=""></strong></div>
+	<div class="conpics">
+		 <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="{dede:global.cfg_templets_skin/}/mimages/caijian1.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="{dede:global.cfg_templets_skin/}/mimages/caijian2.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="{dede:global.cfg_templets_skin/}/mimages/caijian3.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="{dede:global.cfg_templets_skin/}/mimages/caijian2.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="{dede:global.cfg_templets_skin/}/mimages/caijian1.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="{dede:global.cfg_templets_skin/}/mimages/caijian3.png" />
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+	</div>
+	<div class="bgtips" id="bgtips" style="display:none;">
+		<div class="bg_4_tip" id="bg_4_tip" >
+			<img src="/templets/default/mimages/ios.png" style="width:100%;" />
+		</div>
+	</div>
+	<div class="bgtips" id="bgtips2" style="display:none;">
+		<div class="bg_4_tip" id="bg_5_tip" >
+			<img src="/templets/default/mimages/anzhuo.png" style="width:100%;" />
+		</div>
+	</div>
+     {dede:include filename="footer.htm"/}
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="{dede:global.cfg_templets_skin/}/mjs/swiper.min.js"></script>
+	<script type="text/javascript">
+		   var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        paginationClickable: true,
+		slidesPerView:3,
+        autoplay: 2500,
+        autoplayDisableOnInteraction: false
+    });
+	
+    $(document).ready(function(){	
+        updateLineHeightByParam();
+    });
+    window.onresize=function(){ 
+        updateLineHeightByParam();
+    }
+    function updateLineHeightByParam(){
+		var width=$(document.body).width();
+		var width=$(document.body).width();
+		if(width <= 320 ){
+			$(".conlists").css("width","60%");
+			$(".rightpic").css("width","55%");
+			$(".listnews li").css("fontSize", 11.5 + "px");
+			$(".listnews li").css("line-height", 20 + "px");
+			$(".conpics").css("margin-top","-8%");
+			$(".footer").css("font-size","0.8em");
+			$(".footer p").css("font-size","0.8em");
+			$(".rightpic").css("margin-top","-51%")
+		}
+		if(width>320 && width<720){
+			$(".conlists").css("width","60%");
+			$(".rightpic").css("width","60%");
+			$(".listnews li").css("fontSize",15 + "px");
+			$(".listnews li").css("line-height", 30 + "px");
+			$(".conpics").css("margin-top","-10%");
+			$(".footer p").css("font-size","1em");
+			$(".rightpic").css("margin-top","-45%")
+		}
+		if(width>720 && width<1024){
+			$(".listnews li").css("fontSize",30 + "px");
+			$(".listnews li").css("line-height", 100 + "px");
+			$(".rightpic").css("margin-top","-63%")
+		}
+		if(width>=1024){
+		  $(".rightpic .showleftpic").css("width","19%");
+		  $(".rightpic .showleftpic").css("margin","3% 0% 0% 20%");
+		  $(".rightpic .showleftpic").css("left","47%");
+		  $(".rightpic .showrightpic").css("width","60%");
+		  $(".listnews li").css("fontSize",35 + "px");
+		  $(".listnews li").css("line-height", 100 + "px");
+		  $(".rightpic").css("width","85%");
+		  $(".rightpic").css("margin-top","-50%");
+		  $(".rightpic").css("right","0%");
+		}
+    }
+  //判断是否是微信扫描
+    var ua = navigator.userAgent.toLowerCase();
+    if (ua.match(/MicroMessenger/i) == "micromessenger") {
+        $("#userdownload").bind('click', function(){
+            if (checkIsApple()) {
+				document.getElementById("bgtips").style.display="block";  
+			}else{
+				document.getElementById("bgtips2").style.display="block";
+			}       
+        }); 
+	    /*大图下载*/
+		 $(".pic").bind('click', function(){
+            if (checkIsApple()) {
+                    window.location.href = "itms-services://?action=download-manifest&amp;url=https://dn-phoneshz.qbox.me/shz_gw.plist";
+              }else{
+                    window.location.href = "http://download.6513.com/phoneshz/SHZ_GW.apk";
+              }        
+        });   
+			
+    }else{
+       $("#userdownload").bind('click', function(){
+            if (checkIsApple()) {
+                    window.location.href = "itms-services://?action=download-manifest&url=https://dn-phoneshz.qbox.me/shz_gw.plist";
+              }else{
+                    window.location.href = "http://download.6513.com/phoneshz/SHZ_GW.apk";
+              }        
+        }); 
+		$(".pic").bind('click', function(){
+            if (checkIsApple()) {
+                    window.location.href = "itms-services://?action=download-manifest&url=https://dn-phoneshz.qbox.me/shz_gw.plist";
+              }else{
+                    window.location.href = "http://download.6513.com/phoneshz/SHZ_GW.apk";
+              }        
+        });
+    }
+    
+  //判断是否是苹果设备
+      function checkIsApple(){
+         var u = navigator.userAgent, app = navigator.appVersion;
+         var ios=!!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+         var iPad=u.indexOf('iPad') > -1;
+         var iPhone=u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1;
+         if(ios || iPad || iPhone){
+            return true;
+         }else{
+            return false;
+         }
+    }
+
+	(function(){var ua=navigator.userAgent.toLowerCase();var bIsIpad=ua.match(/ipad/i)=="ipad";var bIsIphoneOs=ua.match(/iphone os/i)=="iphone os";var bIsAndroid=ua.match(/android/i)=="android";var bIsWM=ua.match(/windows mobile/i)=="windows mobile";
+	if(!(bIsIpad||bIsIphoneOs||bIsAndroid||bIsWM)){window.location.href="http://shuihu.789game.com"}})();
+</script>
+</body>
+</html>

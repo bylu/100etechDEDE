@@ -1,0 +1,1 @@
+<li><span class="sTitle"><a href="[field:arcurl/]" title="[field:title/]">[field:title/]</a></span></li>

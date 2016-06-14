@@ -1,0 +1,99 @@
+@charset "utf-8";
+    html{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
+    body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {margin:0;padding:0;font-family:Arial,Microsoft YaHei}
+    body{font-family:Arial,Microsoft YaHei,tahoma, Verdana, Geneva, sans-serif; overflow-x:hidden;}
+    li,ul{ list-style:none;}
+    em{ font-style:normal;}
+    a{color:#000;text-decoration:none;-webkit-tap-highlight-color: rgba(0,0,0,0);}
+    a:active{ opacity:0.9}
+    img{ border:none; vertical-align:middle;width:100%;}
+    input{vertical-align:middle;}
+	body{}
+    #wrap{position:relative;width:100%;overflow:hidden;}
+    /*list*/
+    .topindex{line-height:0; position:relative; margin:0 auto;  }
+    .topindex .pic{ display: block;width:100%;margin:0 auto;padding-top:11%;}
+    .nav{background:url(../images/ding.png) no-repeat; background-size:100% 100%; height:15%; position:relative; color:#fff; font-size:1em; position:absolute; top:0; left:0;  width: 100%; z-index:9;}
+    .nav .icobtn { display:inline-block;width:10%; height:77%;vertical-align:middle; background-size:80% auto; margin:4.5% 10px 0;}
+    .nav .home{ background-position:center -4%;}
+    .nav .bbs{float:right; background-position:center 7%;}
+    .nav .logo{ position:absolute; top:0%; left:37%; width:24.5%; overflow:hidden; z-index:99; color:#fff;text-align:center;}
+    .nav .logo img{ width:100%}
+    .nav .icobtn:active{ opacity:0.8}
+   
+    .tit{ clear:both; overflow:hidden;width: 100%; padding:5px 0 5px 23%;margin-top:-6%;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box; position:relative; z-index:99}
+    .tit li{ float:left; width:48.5%;text-align:center;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box; padding:0 10px 5px 0;color:#fff;line-height:2em; font-size:0.875em}
+    .tit li:first-child{margin-right:2%;}
+	.tit li a{ display:block; padding:2px 0; height:100%;color:#fff;border-radius:3px;}
+    .tit li a img{ width:100%;}
+    .tit li em.ico_ios{ background-position:0 -86px;}
+
+	.contentlist{width:100%;float:left;position:relative;}
+    .conlists{width:60%;float:left;display:inline;position:relative;}
+    .title{ margin-top:6%;position:relative;width:100%;float:left;}
+    .title  img{width:50%;}
+	.title2{ margin-top:-25%;position:relative;width:100%;float:left;}
+	.title2  img{width:50%;}
+    .listnews{ clear:both;overflow:hidden; margin-bottom:10px;position:absolute:z-index:55;}
+    .listnews li{ overflow:hidden;padding-left:5px;font-size:1.8em;color:#000;line-height:70px;}
+    .listnews li a{ display:block; overflow:hidden;color:#000; }
+	 .listnews li a label{ margin:0px 6px 0px 0px; }
+ 
+  
+	/*.rightpic{width:65%;position:absolute;margin-top:-22%;right:-4%;z-index:0;}*/
+	.rightpic{width:65%;float:right;margin-top:-62%;margin-right:-4%;}
+	.rightpic .showrightpic{width:93.5%;float:right;display:inline;}
+	/*.rightpic .showleftpic{width:35%;position:absolute;top:50%;left:33%;}*/
+	.rightpic .showleftpic{width:18.2%;position:absolute;top:38%;left:63%;}
+	
+   .conpics{margin-top:-10%;float:left;overflow: hidden; width:100%;}
+   
+	.swiper-slide img{width:95%;}
+    .Newslists{ clear:both;overflow:hidden; margin-bottom: 6px;}
+    .Newslists dd{ overflow:hidden; color:#969696; height:36px; line-height:36px;}
+    .Newslists dd a{ padding:2px 8px; color:#42688c; font-size:0.875em; display:block;height:34px;white-space: nowrap;text-overflow:ellipsis; overflow:hidden;}
+    .Newslists dd a:active{}
+    .Newslists dd a span{ float:right; color:#92b3c6}
+    .footer{margin-top:2%;width:100%;float:left;background:#474747 url(../images/di.png) repeat-x; text-align:center;padding-top:10px; }
+    .footer p{color:#c8c8c8;padding-top:0.18em;}
+    .footer a{ color:#c8c8c8;}
+   
+	
+	
+	/*list*/
+    .Hcon{ background:#111B25; height:49px; position:relative; color:#fff; font-size:1em;background:url(../images/tiao.png) no-repeat; background-size:100% 100%;}
+    .Hcon .icobtn{ display:inline-block; min-width:66px; height:37px;padding: 12px 10px 0;}
+    .Hcon .icobtn em{ display:inline-block;width:25px; margin:0 4px; height:28px; vertical-align:middle; background:url(../images/allicon.png) no-repeat center top; background-size:100% auto;}
+    .Hcon .list,header .back{ float:left;color:#fff;}
+    .Hcon .list em{ background-position:0 0;}
+    .Hcon .back em{ background-position:0 -363px; margin-right:0}
+    .Hcon .bbs{float:right; color:#fff; text-align:center}
+    .Hcon .bbs em{ background-position:0 -35px;}
+    .Hcon a{color:#fff;}
+    .Hcon a:active,header .icobtn:active{ background:#none;}
+    .Hcon a.logo:active{ background:none}
+    .Hcon a.logo{ position:absolute; top:0; left:50%; margin-left:-57px; width:115px; height:49px; z-index:99; color:#fff;line-height: 49px; text-align:center}
+    .Hcon a.logo img{max-height:49px; width:115px;}
+    .Newspic{ clear:both; background:#DEEFF6;border-top: 1px solid #8DC0D3; margin-top:-1px; margin-top:10px;}
+    .Newspic dd{ overflow:hidden; border-bottom:1px dotted #B3CED7; border-top:none;}
+    .Newspic dd  a{ display:block;  overflow: hidden; padding:7px 0 5px 8px;}
+    .Newspic dd a:active{ background:#D8EDF5}
+    .Newspic dd img{float:left; width:32%; height:auto;max-width:110px; max-height:158px; margin-right:7px;}
+    .Newspic dd h3{ font-size:1em;font-weight: 600;}
+    .Newspic dd .jtxt{ color:#42688C; font-size:0.875em;line-height: 1.4em;}
+    /*content*/
+    .tags{ background:#b6dae8; border-bottom:1px solid #8DC0D3; padding:5px 8px; margin-bottom:10px; font-size:1em; color:#000;}
+    .tags a{ margin:0 3px;}
+    .content{ position:relative; z-index:100; padding:10px; background:#DEEFF6;border-top:1px solid #8DC0D3;border-bottom:1px solid #8DC0D3;}
+    .content h1{ font-size:1em; line-height:1.6em; color:#1D4D73; padding:5px 0 8px;}
+    .content .time{ line-height:2em; font-size:0.75em; color:#7d7d7d; padding:5px 0; border-bottom:1px solid #E0E0E0}
+    .content .time span{ padding-right:10px;}
+    .conall{ line-height:1.8em; font-size:0.875em; padding: 10px 0;}
+    .conall img{ max-width:100%; height:auto; padding:8px 0}
+    .Newswrite{ border-bottom:none; margin-bottom:0}
+
+	/*·ÖÒ³*/
+	.page{width:100%;float:left;margin-top:10px;}
+	.page ul{width:80%;margin:0px auto;}
+	.page li{width: auto;float: left;display: inline;margin: 0px 5px;}
+	.page li.thisclass{color:red;}

@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+{dede:include filename="head.htm"/}
+<title>{dede:field.title/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+</head>
+<body>
+<style type="text/css">
+.bgtips{width:100%;height:157px;position:fixed;right:2%;top:2%;z-index:99999;}
+.bgtips .bg_4_tip{width:60%;position:absolute;right:2%;z-index:10000000}
+</style>
+ <img src="{dede:global.cfg_templets_skin/}/mimages/bg.png" style="position:absolute;width:100%;height:100%;z-index:-1;" />
+<header class="topindex">
+        <a>
+            <img src="{dede:global.cfg_templets_skin/}/mimages/dabg.png" alt="" class="pic">
+        </a>
+		<div class="nav">
+			 <a onClick="javascript :history.back(-1);" class="icobtn back"><em></em>返回</a>
+            <span class="logo">
+                <img src="{dede:global.cfg_templets_skin/}/mimages/logo.png" alt="">
+			</span>
+        </div>
+	</header>
+	<ul class="tit">
+		<li class="ico_green">
+            <a href="javascript:void(0);">
+                <img src="{dede:global.cfg_templets_skin/}/mimages/lv.png" alt="" id="userdownload">
+            </a>
+        </li>
+		<li class="ico_red">
+            <a href="">
+                <img src="{dede:global.cfg_templets_skin/}/mimages/huang.png" alt="">
+            </a>
+        </li>
+	</ul>
+<div class="content">
+	<h1>{dede:field.title/}</h1>
+	<div class="time">
+        <span>发布时间：{dede:field.pubdate function="MyDate('Y-m-d',@me)"/}</span>
+        <span>作者：{dede:field.writer/}</span>
+    </div>
+	<div class="conall">
+       {dede:field.body/}
+	</div>
+</div>
+<div class="title"><strong>最新资讯</strong></div>
+<dl class="Newslists Newswrite">
+  	{dede:arclist row="4" titlelen="50" infolen="100" orderby="pubdate"}
+    <dd><a href="[field:typeurl/]" title="[field:title /]"><span>[field:pubdate  function='strftime("%m-%d",@me)'/]</span><em>[field:title /]</em></a></dd>
+	{/dede:arclist}
+</dl>
+	  {dede:include filename="footer.htm"/}
+	  	<div class="bgtips" id="bgtips" style="display:none;">
+		<div class="bg_4_tip" id="bg_4_tip" >
+			<img src="/templets/default/images/ios.png" style="width:100%;" />
+		</div>
+	</div>
+	<div class="bgtips" id="bgtips2" style="display:none;">
+		<div class="bg_4_tip" id="bg_5_tip" >
+			<img src="/templets/default/images/anzhuo.png" style="width:100%;" />
+		</div>
+	</div>
+	  	 <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.8.3/jquery.min.js"></script>
+	 <script type="text/javascript">
+		  $(document).ready(function(){	//初始化是调用
+        updateLineHeightByParam();
+    });
+    window.onresize=function(){ //调整宽度是调用
+        updateLineHeightByParam();
+    }
+    function updateLineHeightByParam(){//function:根据宽度大小来更改背景图片
+		var width=$(document.body).width();
+		if(width <= 320 ){
+			$(".footer").css("font-size","0.8em");
+			$(".footer p").css("font-size","0.8em");
+		}
+		if(width >320  && width <720){
+			$(".footer p").css("font-size","1em");
+		}
+		if(width > 720 ){
+		$(".nav .icobtn").css("font-size","3em");
+		}
+	}
+
+	//判断是否是微信扫描  
+    var ua = navigator.userAgent.toLowerCase();
+    if (ua.match(/MicroMessenger/i) == "micromessenger") {
+        $("#userdownload").bind('click', function(){
+            if (checkIsApple()) {
+				document.getElementById("bgtips").style.display="block";  
+			}else{
+				document.getElementById("bgtips2").style.display="block";
+			}       
+        }); 
+        /*大图下载*/
+		 $(".Hpic").bind('click', function(){
+            if (checkIsApple()) {
+				document.getElementById("bgtips").style.display="block";  
+			}else{
+				document.getElementById("bgtips2").style.display="block";
+			}       
+        });
+      
+       /*底部下载*/
+	   $(".downloadfooter").bind('click', function(){
+            if (checkIsApple()) {
+				document.getElementById("bgtips").style.display="block";  
+			}else{
+				document.getElementById("bgtips2").style.display="block";
+			}       
+        });
+
+    }else{
+       $("#userdownload").bind('click', function(){
+            if (checkIsApple()) {
+                    window.location.href = "itms-services://?action=download-manifest&amp;url=https://dn-phoneshz.qbox.me/shz_gw.plist";
+              }else{
+                    window.location.href = "http://download.6513.com/phoneshz/SHZ_GW.apk";
+              }        
+        });  
+		 /*大图下载*/
+		 $(".pic").bind('click', function(){
+            if (checkIsApple()) {
+                    window.location.href = "itms-services://?action=download-manifest&amp;url=https://dn-phoneshz.qbox.me/shz_gw.plist";
+              }else{
+                    window.location.href = "http://download.6513.com/phoneshz/SHZ_GW.apk";
+              }        
+        });   
+		/*底部下载*/
+		 $(".downloadfooter").bind('click', function(){
+            if (checkIsApple()) {
+                    window.location.href = "itms-services://?action=download-manifest&amp;url=https://dn-phoneshz.qbox.me/shz_gw.plist";
+              }else{
+                    window.location.href = "http://download.6513.com/phoneshz/SHZ_GW.apk";
+              }        
+        }); 
+    }
+
+	 //判断是否是苹果设备
+      function checkIsApple(){
+         var u = navigator.userAgent, app = navigator.appVersion;
+         var ios=!!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+         var iPad=u.indexOf('iPad') > -1;
+         var iPhone=u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1;
+         if(ios || iPad || iPhone){
+            return true;
+         }else{
+            return false;
+         }
+    }
+
+	 </script>
+</body>
+</html>
